@@ -1,9 +1,9 @@
 FROM jenkins/jenkins:2.426.2-jdk17
 
 USER root
-RUN apt-get update && apt-get install -y lsb-release unzip
+RUN apt-get update && apt-get install -y lsb-release unzip wget
 
-RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+RUN wget "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -O awscliv2.zip
 RUN unzip awscliv2.zip
 RUN ./aws/install
 
